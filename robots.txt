@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://easybreezylaundromat.com/sitemap.xml
