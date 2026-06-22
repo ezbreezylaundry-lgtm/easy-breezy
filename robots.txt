@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+Disallow: /thank-you
+Disallow: /commercial-laundry-1
+Disallow: /dry-cleaning-1
+
 Sitemap: https://easybreezylaundromat.com/sitemap.xml
