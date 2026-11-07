@@ -175,3 +175,22 @@ main img, main video { max-width: 100%; }
   .marquee-track, .floating-cta-pill { animation: none; }
   .header-nav { transition: none; }
 }
+
+/* Keep the commercial contact on one readable line in the footer. */
+.footer-contact-item > svg { flex-shrink: 0; }
+.footer-contact-item a[href="tel:6199364218"] { white-space: nowrap; }
+@media (min-width: 1100px) {
+  .footer-mega-grid {
+    grid-template-columns: minmax(400px, 1.65fr) repeat(3, minmax(0, 1fr));
+    gap: clamp(24px, 3vw, 48px);
+  }
+}
+@media (min-width: 768px) and (max-width: 1099px) {
+  .footer-mega-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .footer-mega-grid > .footer-col:first-child { grid-column: 1 / -1; }
+}
+@media (max-width: 767px) {
+  .footer-contact-item a[href="tel:6199364218"] {
+    font-size: clamp(10px, 2.9vw, .9rem);
+  }
+}
