@@ -185,6 +185,33 @@ main img, main video { max-width: 100%; }
     gap: clamp(24px, 3vw, 48px);
   }
 }
+
+/* Compact the expanded menu on tablet-sized and zoomed desktop viewports. */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .header-nav { padding: 16px 24px; }
+  .header-nav > .container { max-width: 960px; margin-inline: auto; }
+  .header-nav .mobile-contact-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    align-items: stretch;
+  }
+  .header-nav .mobile-contact-btn {
+    min-height: 48px;
+    padding: 10px 12px !important;
+    border-radius: 8px;
+    font-size: .85rem;
+    line-height: 1.4;
+  }
+  .header-nav .mobile-only-contact { margin-bottom: 12px; padding-bottom: 14px; }
+  .header-nav .nav-list { gap: 0; }
+  .header-nav .nav-list a,
+  .header-nav .dropdown-toggle {
+    min-height: 44px;
+    padding: 10px 14px;
+    font-size: .85rem;
+    line-height: 1.4;
+  }
+}
 @media (min-width: 768px) and (max-width: 1099px) {
   .footer-mega-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .footer-mega-grid > .footer-col:first-child { grid-column: 1 / -1; }
