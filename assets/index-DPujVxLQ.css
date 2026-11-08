@@ -185,33 +185,6 @@ main img, main video { max-width: 100%; }
     gap: clamp(24px, 3vw, 48px);
   }
 }
-
-/* Compact the expanded menu on tablet-sized and zoomed desktop viewports. */
-@media (min-width: 768px) and (max-width: 1279px) {
-  .header-nav { padding: 16px 24px; }
-  .header-nav > .container { max-width: 960px; margin-inline: auto; }
-  .header-nav .mobile-contact-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 10px;
-    align-items: stretch;
-  }
-  .header-nav .mobile-contact-btn {
-    min-height: 48px;
-    padding: 10px 12px !important;
-    border-radius: 8px;
-    font-size: .85rem;
-    line-height: 1.4;
-  }
-  .header-nav .mobile-only-contact { margin-bottom: 12px; padding-bottom: 14px; }
-  .header-nav .nav-list { gap: 0; }
-  .header-nav .nav-list a,
-  .header-nav .dropdown-toggle {
-    min-height: 44px;
-    padding: 10px 14px;
-    font-size: .85rem;
-    line-height: 1.4;
-  }
-}
 @media (min-width: 768px) and (max-width: 1099px) {
   .footer-mega-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .footer-mega-grid > .footer-col:first-child { grid-column: 1 / -1; }
@@ -221,3 +194,29 @@ main img, main video { max-width: 100%; }
     font-size: clamp(10px, 2.9vw, .9rem);
   }
 }
+
+/* Contact cards on Home and About Us. */
+.eb-contact-card { grid-template-columns: 1fr !important; text-align: center !important; }
+.eb-contact-card > div { min-width: 0; }
+.eb-contact-card > div > div:first-child { justify-content: center; }
+.eb-contact-card a { display: inline-block; max-width: 100%; }
+.eb-contact-card a[href^="mailto:"] { white-space: nowrap; overflow-wrap: normal; font-size: clamp(14px, 3.8vw, 18px); }
+.eb-contact-card a[href^="tel:"] { font-size: 16px; line-height: 1.6; }
+@media (min-width: 1100px) {
+  .eb-contact-card { grid-template-columns: minmax(0,1fr) minmax(0,1.4fr) minmax(0,1.2fr) !important; gap: 24px !important; padding: 32px 24px !important; }
+  .container:has(> .eb-contact-card), .container:has(> div > .eb-contact-card) { max-width: 1200px !important; }
+}
+@media (max-width: 400px) {
+  .eb-contact-card { padding: 28px 14px !important; }
+}
+
+/* Clear phone groups and a linked, two-line street address. */
+.eb-contact-card .eb-contact-phone { display: block; margin: 0 auto; text-decoration: none; }
+.eb-contact-card .eb-phone-label { display: block; color: var(--color-text-muted); font-size: 14px; font-weight: 500; line-height: 1.5; }
+.eb-contact-card .eb-phone-number { display: block; margin-top: 4px; color: var(--color-primary-dark); font-size: 21px; font-weight: 800; line-height: 1.5; white-space: nowrap; }
+.eb-contact-card .eb-commercial-phone { border-top: 1px solid #e3e8ed; padding-top: 14px; margin-top: 14px !important; }
+.eb-contact-card .eb-contact-address { color: var(--color-text-muted); text-decoration: none; line-height: 1.7; font-size: 18px; }
+.eb-contact-address > span { display: block; }
+.eb-contact-card .eb-map-hint { color: var(--color-primary-dark); font-size: 14px; text-decoration: underline; text-underline-offset: 3px; margin-top: 10px; }
+.eb-contact-card a:focus-visible { outline: 3px solid #ffcb05; outline-offset: 5px; border-radius: 4px; }
+.eb-contact-card .eb-contact-phone:hover .eb-phone-number { text-decoration: underline; text-underline-offset: 4px; }
