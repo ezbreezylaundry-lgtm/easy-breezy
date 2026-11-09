@@ -220,3 +220,18 @@ main img, main video { max-width: 100%; }
 .eb-contact-card .eb-map-hint { color: var(--color-primary-dark); font-size: 14px; text-decoration: underline; text-underline-offset: 3px; margin-top: 10px; }
 .eb-contact-card a:focus-visible { outline: 3px solid #ffcb05; outline-offset: 5px; border-radius: 4px; }
 .eb-contact-card .eb-contact-phone:hover .eb-phone-number { text-decoration: underline; text-underline-offset: 4px; }
+
+/* Self-service page: focused information and balanced, responsive cards. */
+.eb-self-service .container.grid-2 { gap: clamp(28px, 5vw, 64px) !important; }
+.eb-self-service .content-left > h2 { font-size: clamp(28px, 3vw, 40px) !important; line-height: 1.2; }
+.eb-self-service .content-left > p { font-size: 18px !important; line-height: 1.75 !important; max-width: 56ch; }
+.eb-self-service .feature-list { display: grid; gap: 18px; }
+.eb-self-service .feature-item { padding: 24px; margin-bottom: 0 !important; background: #f8fafc; border: 1px solid #e5ebf0; border-radius: 16px; gap: 16px !important; }
+.eb-self-service .feature-item p { font-size: 16px; line-height: 1.7; }
+.eb-self-service .pricing-sidebar { min-width: 0; }
+.eb-self-service .pricing-col { border-radius: 20px; box-shadow: 0 12px 36px rgba(27,56,94,.05); }
+.eb-self-service .pricing-sidebar .btn { min-height: 48px; border-radius: 10px; }
+@media (max-width: 900px) {
+ .eb-self-service .container.grid-2 { grid-template-columns: minmax(0,1fr) !important; }
+ .eb-self-service .pricing-sidebar { width: 100%; max-width: 620px; margin-inline: auto; }
+}
